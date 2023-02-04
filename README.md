@@ -1,10 +1,7 @@
-# Computer Networking 
-## Basic Command
+# Basic Command
+## Computer Networking
 
 >Switch>show version
-
-
-
 ### How to set clock
 ```
 Switch>show clock
@@ -14,7 +11,6 @@ Switch#clock set 11:33:10 ?
 Switch#clock set 11:33:10 3 February ?
 Switch#clock set 11:33:10 3 February 2023 
 ```
-
 ### How to configure switch
 ```
 Switch>enable
@@ -36,13 +32,21 @@ S1# show running-config
 
 
 
-### Django Command
+## Django Command
 ```
 python manage.py startapp CoverPage
 pip freeze > requirements.txt
 pip install -r requirments.txt
 ```
 
+## How to back up Driver
+```
+To save> DISM /Online /Export-Driver /Destination:"D:\DriverBackup"
+To load> Export-WindowsDriver -Online -Destination D:\DriverBackup
+```
+
+
+## Competitive Programming
 ### CP Template
 ```
 /**===========================================================================================

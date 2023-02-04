@@ -34,3 +34,12 @@ S1(config)# exit
 S1# show running-config
 ```
 
+
+
+### Django Command
+```
+python manage.py startapp CoverPage
+pip freeze > requirements.txt
+pip install -r requirments.txt
+```
+

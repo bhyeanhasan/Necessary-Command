@@ -1,11 +1,13 @@
 # Computer Networking 
 ## Basic Command
 
-> Switch>show version
+>Switch>show version
 
->Switch>show clock
 
+
+### How to set clock
 ```
+Switch>show clock
 Switch>enable
 Switch#clock set ?
 Switch#clock set 11:33:10 ?
@@ -13,7 +15,9 @@ Switch#clock set 11:33:10 3 February ?
 Switch#clock set 11:33:10 3 February 2023 
 ```
 
+### How to configure switch
 ```
+Switch>enable
 Switch#configure terminal
 Switch#config t
 s1(config)#no ip domain-lookup

@@ -27,7 +27,28 @@ S1(config-if)# ip address 192.168.1.1 255.255.255.0
 S1(config-if)# no shut
 S1(config)# banner motd # Unauthorized access is strictly prohibited and prosecuted to the full extent of the law. #
 S1(config)# exit
+![img_1.png](img_1.png)
 S1# show running-config
+S1# copy running-config startup-config
+
+R1-ISP(config)#interface S0/0/0
+R1-ISP(config-if)#ip address 192.168.3.98 255.255.255.252
+R1-ISP(config-if)#no shutdown 
+
+R1-ISP(config)#interface S0/0/0
+R1-ISP(config-if)#clock rate 64000
+R1-ISP(config-if)#exit 
+
+R1-ISP(config)#line vty 0
+R1-ISP(config-line)#password cisco
+R1-ISP(config-line)#login
+R1-ISP(config-line)#exit
+
+R2-Central(config)#ip route
+R2-Central(config)#ip route 0.0.0.0 0.0.0.0 192.168.3.98
+
+R1-ISP(config)#ip route 192.168.3.0 255.255.255.224 192.168.3.97
+R1-ISP(config)#exit
 ```
 
 

@@ -51,7 +51,7 @@ R2-Central(config)#ip route 0.0.0.0 0.0.0.0 192.168.3.98
 R1-ISP(config)#ip route 192.168.3.0 255.255.255.224 192.168.3.97
 R1-ISP(config)#exit
 ```
-[IP](https://1drv.ms/x/s!AmZ4AO27AT3OiqEHUVaPeLujSmz2Tw?e=C8Argw)
+[IP list](https://1drv.ms/x/s!AmZ4AO27AT3OiqEHUVaPeLujSmz2Tw?e=C8Argw)
 
 
 

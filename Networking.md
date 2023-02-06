@@ -55,5 +55,12 @@ R1-ISP(config)#exit
 
 
 
-
+```
+C:\>ftp 192.168.0.100
+Username:noyon
+Password:123
+ftp>dir
+ftp>put bhyean.txt
+ftp>get bhyean.txt
+```
 

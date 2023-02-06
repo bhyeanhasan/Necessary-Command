@@ -62,5 +62,7 @@ Password:123
 ftp>dir
 ftp>put bhyean.txt
 ftp>get bhyean.txt
+
+telnet 192.168.0.10
 ```
 

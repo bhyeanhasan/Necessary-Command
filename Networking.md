@@ -34,6 +34,8 @@ S1# copy running-config startup-config
 
 R1-ISP(config)#interface S0/0/0
 R1-ISP(config-if)#ip address 192.168.3.98 255.255.255.252
+R1(config-if)# ipv6 address 2001:db8:acad::1/64 
+R1(config-if)# ipv6 address FE80::1 link-local
 R1-ISP(config-if)#no shutdown 
 
 R1-ISP(config)#interface S0/0/0

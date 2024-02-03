@@ -12,6 +12,7 @@ Router(config-router)# network 10.0.0.0
 Router(config)# router eigrp 100  
 Router(config-router)# network 192.168.1.0
 Router(config-router)# network 192.168.10.4 0.0.0.3
+Router(config-if)# ip hello-interval eigrp 100 30
 ```
 
 #### OSPF Configuration
@@ -19,7 +20,7 @@ Router(config-router)# network 192.168.10.4 0.0.0.3
 Router(config)# router ospf 100  
 Router(config-router)# router-id 192.168.1.1
 Router(config-router)# network 192.168.1.0 0.0.0.255 area 0
-Router(config-router)# ip ospf hello-interval 30
+Router(config-if)# ip ospf hello-interval 30
 ```
 
 #### BGP Configuration

@@ -1,24 +1,45 @@
-#### Configuring Static Route
 
-```
-Router(config)# ip route {network} {subnet} {next-hop ip / exit interface}
-Router(config)# ip route 192.168.10.0 255.255.255.0 G0/1 192.168.20.0
 
-Default route:
-Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.20.0
-
-Floating route:
-Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.30.0 5
+#### RIP v2 Configuration
+``` 
+Router(config)# router rip  
+Router(config-router)# version 2
+Router(config-router)# network 10.0.0.0
 ```
 
-#### Check Route
-
+#### EIGRP Configuration
+``` 
+Router(config)# router eigrp 100  
+Router(config-router)# network 192.168.1.0
+Router(config-router)# network 192.168.10.4 0.0.0.3
 ```
-Router# show ip route | begin Gateway
-Router# show ip route | include C
-Router# show ip route 192.168.10.0
-Router# show running-config | section ip route
-Router# traceroute 192.168.50.0
+
+#### OSPF Configuration
+``` 
+Router(config)# router ospf 100  
+Router(config-router)# router-id 192.168.1.1
+Router(config-router)# network 192.168.1.0 0.0.0.255 area 0
+Router(config-router)# ip ospf hello-interval 30
+```
+
+#### BGP Configuration
+```
+Router(config)# router bgp 100  # BGP Autonomous System number (AS)
+Router(config-router)# neighbor 192.168.2.2 remote-as 200  # Remote BGP neighbor IP and AS
+Router(config-router)# network 192.168.1.0 mask 255.255.255.0  # Network advertisement
+```
+
+#### Inter VLAN Communication
+``` 
+Router(config)# interface fa0/0.10
+Router(config-subif)# encapsulation dot1Q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config-subif)# exit
+
+Router(config)# interface fa0/0.20
+Router(config-subif)# encapsulation dot1Q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+Router(config-subif)# exit
 ```
 
 #### Configuring VLAN 

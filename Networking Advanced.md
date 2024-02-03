@@ -30,18 +30,6 @@ Router(config-router)# neighbor 192.168.2.2 remote-as 200  # Remote BGP neighbor
 Router(config-router)# network 192.168.1.0 mask 255.255.255.0  # Network advertisement
 ```
 
-#### Inter VLAN Communication
-``` 
-Router(config)# interface fa0/0.10
-Router(config-subif)# encapsulation dot1Q 10
-Router(config-subif)# ip address 192.168.10.1 255.255.255.0
-Router(config-subif)# exit
-
-Router(config)# interface fa0/0.20
-Router(config-subif)# encapsulation dot1Q 20
-Router(config-subif)# ip address 192.168.20.1 255.255.255.0
-Router(config-subif)# exit
-```
 
 #### Configuring VLAN 
 ```
@@ -53,11 +41,6 @@ Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 10
 ```
 
-#### Check VLAN 
-```
-Switch# show vlan brief
-Switch# show vlan name student
-```
 
 #### Configuring Trunk
 ```
@@ -67,7 +50,16 @@ Switch(config-if)# switchport trunk allowed vlan 10,20,99
 Switch(config-if)# switchport trunk native vlan 99
 ```
 
-#### Check Trunk 
-```
-Switch# show interface trunk
+
+#### Inter VLAN Communication
+``` 
+Router(config)# interface fa0/0.10
+Router(config-subif)# encapsulation dot1Q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config-subif)# exit
+
+Router(config)# interface fa0/0.20
+Router(config-subif)# encapsulation dot1Q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+Router(config-subif)# exit
 ```
